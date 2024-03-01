@@ -1,2 +1,2 @@
 # TaskMenager
-web application for task management
+web application for product management
