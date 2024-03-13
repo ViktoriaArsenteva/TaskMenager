@@ -24,7 +24,7 @@ public class User implements UserDetails{
     private Long id;
     @Column(name = "email", unique = true)
     private String email;
-    @Column(name = "phone_number")
+    @Column(name = "phoneNumber")
     private String phoneNumber;
     @Column(name = "Name")
     private String Name;
@@ -39,7 +39,7 @@ public class User implements UserDetails{
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Product> products = new ArrayList<>();
     private LocalDateTime dateOfCreated;
 
@@ -48,10 +48,15 @@ public class User implements UserDetails{
         dateOfCreated = LocalDateTime.now();
     }
 
+    public boolean isAdmin() {
+        return roles.contains(Role.ROLE_ADMIN);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;
     }
+
 
     // security
 
