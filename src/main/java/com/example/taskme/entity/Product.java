@@ -21,7 +21,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-
     @Column(name = "title")
     private String title;
     @Column(name = "description", columnDefinition = "text")

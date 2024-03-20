@@ -3,17 +3,8 @@
     <h1 style="text-align: center">Поиск товаров</h1><hr>
     <form method="get" action="/">
         <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="searchCity">Город</label>
-                <select id="searchCity" class="form-control">
-                    <option value="">Город не выбран</option>
-                    <option value="Москва">Москва</option>
-                    <option value="Красноярск">Красноярск</option>
-                    <option value="Казань">Казань</option>
-                </select>
-            </div>
             <div class="form-group col-md-10">
-                <label for="searchWord">Поиск по объявлениям</label>
+                <label for="searchWord">Поиск по имени пользователя</label>
                 <input type="text" name="searchWord" <#if searchWord??>value="${searchWord}"</#if> class="form-control"
                        id="searchWord">
             </div>
