@@ -10,8 +10,9 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>WishList</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>taskme</name>
+	<name>WishList</name>
 	<description>web application for product management</description>
 	<properties>
 		<java.version>17</java.version>
